@@ -1,0 +1,18 @@
+<div class="tabs-main">
+  <div class="wrapper">
+    <ul class="tabs">
+      {% for item in module.tabs_accordions %}
+      <li {% if loop.index == 1 %}class="active"{% endif %} rel="tab{{loop.index}}">{{ item.tab_title }}</li>
+      {% endfor %}    
+    </ul>
+    <div class="tab_container">  
+      {% for item in module.tabs_accordions %}
+        <h3 class="acc_active tab_accordion_heading" rel="tab{{loop.index}}">{{ item.tab_title }}</h3>
+        <div id="tab{{loop.index}}" class="tab_content">
+          <h2>{{ item.tab_title }}</h2>
+          <p>{{ item.tab_content }}</p>
+        </div>
+      {% endfor %}  
+    </div>
+  </div>
+</div>
